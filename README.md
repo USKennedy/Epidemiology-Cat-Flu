@@ -2,7 +2,7 @@
 # Risk Factor Analysis for Feline Upper Respiratory Tract Infections in RSPCA shelters across Queensland
 
 Authors:
-Dr. Uttara Kennedya, Dr. Mandy Paterson<sup>b</sup>, Dr. Nicholas Clarkc
+Dr. Uttara Kennedy<sup>a</sup>, Dr. Mandy Paterson<sup>b</sup>, Dr. Nicholas Clark<sup>c</sup>
 
 Affiliations:
 UQ School of Veterinary Science, The University of Queensland, Gatton, Queensland 4343, Australiaa,b,c
