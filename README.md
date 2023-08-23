@@ -26,44 +26,40 @@ Figure 1 demonstrates the causal relationships between exposure variables and th
 
 #### Figure 1: Direct Acyclic Graph showing postulated causal relationships between exposure variables and outcome (infection probability). Light grey variables are unobserved
 
-
-
-
 Using the DAG, we defined four models where each exposure variable was verified sequentially and presumed to exert influence on the outcome independently. The final adjusted models took the following form:
 
 ### Infection Probability by Gender:
-logit(π)= α+ α_source + β_gender*gender+ β_los*los + β_fostered*fostered + β_age*age_bracket + β_dsx*dsx_status+ 
- f(incare) + f(month)
+logit(π)= α + α_source + β_gender*gender + β_los*los + β_fostered*fostered + β_age*age_bracket + β_dsx*dsx_status + f(incare) + f(month)
 
 ### Infection Probability by Desex status, Source and In-care count:
-logit(π)= α+ α_source + β_gender*gender+  β_age*age_bracket + 
-β_dsx*dsx_status+  f(incare) + f(month)
+logit(π)= α + α_source + β_gender*gender + β_age*age_bracket + β_dsx*dsx_status + f(incare) + f(month)
 
 ### Infection Probability by Age bracket:
-logit(π)= α+ α_source + β_gender*gender+  β_age*age_bracket + 
-f(incare) + f(month)
+logit(π)= α + α_source + β_gender*gender +  β_age*age_bracket + f(incare) + f(month)
 
 ### Infection Probability by Season:
-logit(π)= α+ α_source + β_gender*gender+  β_age*age_bracket +
- β_dsx*dsx_status+ f(month)
+logit(π)= α + α_source + β_gender*gender+  β_age*age_bracket + β_dsx*dsx_status+ f(month)
 
 Where:
 
-f(month)= ∑▒〖β_month*b_month 〗 
-β_month  ~ Normal(μ_month,σ_month) 
-f(incare)= ∑▒〖β_incare*b_incare 〗 
-β_incare  ~ Normal(μ_incare,σ_incare) 
-α_source=Normal(μ_source,σ_source)
+f(month) = ∑ β_month * b_month  \
+β_month  ~ Normal(μ_month, σ_month) \
+f(incare) = ∑ β_incare * b_incare \
+β_incare  ~ Normal(μ_incare, σ_incare) \
+α_source = Normal(μ_source, σ_source)
+
 When the effect of an animal’s gender and its desex status were adjusted using minimum adjustment sets, our models estimated that males were 1.24 (95% CI 1.19, 1.31) times more likely than females to be infected, while already desexed animals were only 0.68 (95% CI 0.60, 0.72) as likely to be infected compared to those not desexed on entry into the shelter. Similarly, cats (> 4 months) were twice as likely (95% CI 1.91, 2.09) as kittens (0-4 months) to be infected. After controlling for source-level variables using random effects, animals entering the shelter as seized by the inspectorate (n = 415) were estimated to have the highest probability of infection compared to animals from other sources (Table 1).
-Table 1: Adjusted OR for various animal sources
-Source	Adjusted OR	95% CI
-Seized (n=415)	0.51	0.46-0.57
-Stray (n=27,513)	0.34	0.32-0.36
-Surrendered (n=9,438)	0.26	0.24-0.28
+
+#### Table 1: Adjusted OR for various animal sources
+Source | Adjusted OR | 95% CI
+:---:|:---:|:---:
+Seized (n=415) | 0.51 | 0.46-0.57
+Stray (n=27,513) | 0.34 | 0.32-0.36
+Surrendered (n=9,438) | 0.26 | 0.24-0.28
 
 Figures 2a-f display conditional adjusted predictions of infection probability of animals in relation to various predictors (month of entry, animal source, age, gender, desex status and housing density). Model predictions demonstrated that infection probability was highest in winter months for seized animals, adults, males and animals not desexed on entry. Infection probability also increased with a higher number of animals already in the shelter. The model’s output was tested by computing predictions using new data with specified values for chosen predictors, holding all other predictors at their mean/mode. Figure 3 compares the difference in model predictions between May and December, for two hypothetical housing densities: low (n = 666) versus high (n = 1212). 
 
-
+![image](./Images/PPplots.jpg)
 
 
 
