@@ -20,7 +20,7 @@ The aims of this paper are to (1) provide an understanding of the demographic an
 We used retrospective clinical records from RSPCA Qld for this research. Records of all felines entering the charity’s shelters between the periods of 1-January 2013 and 31-December 2020 were obtained. Each animal’s record contained a (1) unique animal identification number, (2) demographic details such as age (as estimated at the time of entry into the shelter), neuter status on entry and gender, (3) incoming circumstance, date and region, (4) length of stay, (5) days spent in foster, (6) date and status of final outcome for that animal and (7) free-text veterinary clinical notes. 
 Figure 1 demonstrates the causal relationships between exposure variables and the outcome of interest. Observed and measurable exposure variables (animal’s source, neuter status on entry into the shelter (Dsx status), seasonal changes, housing density or the total number of animals in care (defined as a moving average to capture an individual’s average environment), whether an animal was sent out to foster, and total length of time that an animal spent in the shelter excluding time spent in foster (LOS in shelter) as well as unobserved variables (presence of comorbidities, behavioral predisposition and number of times an animal was moved between/within shelters) were added to the DAG and connected through appropriate causal pathways.
 
-
+![alt text]('./Images/Dag.png')
 
 
 
