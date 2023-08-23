@@ -18,33 +18,38 @@ RSPCA Queensland
 ## Research Summary:
 The aims of this paper are to (1) provide an understanding of the demographic and temporal attributes of potential risk factors for feline URT infection across RSPCA Qld shelters, (2) create a detailed causal framework to demonstrate presumed relationships of potential risk factors with each other and with infection probability and (3) use multiple models to quantify causal effects of admission variables (source, gender, age), number of animals in care, length of stay, time spent in foster and season on risk of feline URT infection. 
 We used retrospective clinical records from RSPCA Qld for this research. Records of all felines entering the charity’s shelters between the periods of 1-January 2013 and 31-December 2020 were obtained. Each animal’s record contained a (1) unique animal identification number, (2) demographic details such as age (as estimated at the time of entry into the shelter), neuter status on entry and gender, (3) incoming circumstance, date and region, (4) length of stay, (5) days spent in foster, (6) date and status of final outcome for that animal and (7) free-text veterinary clinical notes. 
+
 Figure 1 demonstrates the causal relationships between exposure variables and the outcome of interest. Observed and measurable exposure variables (animal’s source, neuter status on entry into the shelter (Dsx status), seasonal changes, housing density or the total number of animals in care (defined as a moving average to capture an individual’s average environment), whether an animal was sent out to foster, and total length of time that an animal spent in the shelter excluding time spent in foster (LOS in shelter) as well as unobserved variables (presence of comorbidities, behavioral predisposition and number of times an animal was moved between/within shelters) were added to the DAG and connected through appropriate causal pathways.
 
-![alt text]('./Images/Dag.png')
 
+![](./Images/Dag.png)
+
+#### Figure 1: Direct Acyclic Graph showing postulated causal relationships between exposure variables and outcome (infection probability). Light grey variables are unobserved
 
 
 
 
 Using the DAG, we defined four models where each exposure variable was verified sequentially and presumed to exert influence on the outcome independently. The final adjusted models took the following form:
-	Infection Probability by Gender:
-logit(π)= α+ α_source + β_gender*gender+ β_los*los + β_fostered*fostered
-+ β_age*age_bracket + β_dsx*dsx_status+  f(incare) + f(month)
-	Infection Probability by Desex status, Source and In-care count:
+
+### Infection Probability by Gender:
+logit(π)= α+ α_source + β_gender*gender+ β_los*los + β_fostered*fostered + β_age*age_bracket + β_dsx*dsx_status+ 
+ f(incare) + f(month)
+
+### Infection Probability by Desex status, Source and In-care count:
 logit(π)= α+ α_source + β_gender*gender+  β_age*age_bracket + 
 β_dsx*dsx_status+  f(incare) + f(month)
 
-	Infection Probability by Age bracket:
+### Infection Probability by Age bracket:
 logit(π)= α+ α_source + β_gender*gender+  β_age*age_bracket + 
 f(incare) + f(month)
 
-	Infection Probability by Season:
+### Infection Probability by Season:
 logit(π)= α+ α_source + β_gender*gender+  β_age*age_bracket +
  β_dsx*dsx_status+ f(month)
 
 Where:
 
-	f(month)= ∑▒〖β_month*b_month 〗 
+f(month)= ∑▒〖β_month*b_month 〗 
 β_month  ~ Normal(μ_month,σ_month) 
 f(incare)= ∑▒〖β_incare*b_incare 〗 
 β_incare  ~ Normal(μ_incare,σ_incare) 
