@@ -23,7 +23,6 @@ Figure 1 demonstrates the causal relationships between exposure variables and th
 
 
 ![](./Images/Dag.png)
-
 #### Figure 1: Direct Acyclic Graph showing postulated causal relationships between exposure variables and outcome (infection probability). Light grey variables are unobserved
 
 Using the DAG, we defined four models where each exposure variable was verified sequentially and presumed to exert influence on the outcome independently. The final adjusted models took the following form:
@@ -57,13 +56,15 @@ Seized (n=415) | 0.51 | 0.46-0.57
 Stray (n=27,513) | 0.34 | 0.32-0.36
 Surrendered (n=9,438) | 0.26 | 0.24-0.28
 
+
 Figures 2a-f display conditional adjusted predictions of infection probability of animals in relation to various predictors (month of entry, animal source, age, gender, desex status and housing density). Model predictions demonstrated that infection probability was highest in winter months for seized animals, adults, males and animals not desexed on entry. Infection probability also increased with a higher number of animals already in the shelter. The model’s output was tested by computing predictions using new data with specified values for chosen predictors, holding all other predictors at their mean/mode. Figure 3 compares the difference in model predictions between May and December, for two hypothetical housing densities: low (n = 666) versus high (n = 1212). 
 
 ![image](./Images/PPplots.jpg)
+#### Figure 2: Conditional adjusted predictions of infection probability of animals in relation to various predictors.
 
 
-
-
+![image](./Images/Scenario_plots.jpg)
+#### Figure 3: Infection probability at times of low and high in care numbers in December compared with May
 
 
 
